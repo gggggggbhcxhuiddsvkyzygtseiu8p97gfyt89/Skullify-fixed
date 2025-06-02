@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skullify Music Studio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #111;
+      color: #fff;
+    }
+
+    header {
+      background: #222;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #0f0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      gap: 2rem;
+    }
+
+    .upload-section, .studio-section {
+      background: #1e1e1e;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #000;
+    }
+
+    h2 {
+      color: #0f0;
+    }
+
+    input[type="file"] {
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>🎧 Skullify Music Studio</header>
+
+  <div class="container">
+    <div class="upload-section">
+      <h2>Upload Track</h2>
+      <div id="upload-root"></div>
+    </div>
+
+    <div class="studio-section">
+      <h2>Studio</h2>
+      <div id="studio-root"></div>
+    </div>
+  </div>
+
+  <!-- Load JS files -->
+  <script src="Upload.js"></script>
+  <script src="Studio.js"></script>
+
+  <!-- Initialize components -->
+  <script>
+    // Assuming your Upload.js and Studio.js export render functions
+    // Example: Upload.render('#upload-root'), Studio.render('#studio-root')
+    if (window.Upload && typeof window.Upload.render === 'function') {
+      Upload.render('#upload-root');
+    }
+
+    if (window.Studio && typeof window.Studio.render === 'function') {
+      Studio.render('#studio-root');
+    }
+  </script>
+</body>
+</html>
